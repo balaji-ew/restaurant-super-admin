@@ -1,0 +1,40 @@
+/* Tailwind Core */
+@import 'tailwindcss';
+
+/* ReUI Configs */
+@import './config.reui.css';
+
+/* Baked Bouquet admin tokens */
+@import './brand.css';
+
+/** Global Styles **/
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /*
+   * The default face, set once. Everything inherits from here — headings,
+   * buttons, labels, table cells. Tailwind's preflight already gives form
+   * controls `font-family: inherit`, so inputs and selects come along too
+   * rather than falling back to the browser's system UI font.
+   */
+  body {
+    font-family: var(--font-sans);
+  }
+
+  *:focus-visible {
+    @apply outline-ring rounded-xs shadow-none outline-2 outline-offset-3 transition-none!;
+  }
+}
+
+/*
+ * Metronic component and demo stylesheets used to be imported here, but
+ * `css/components/` and `css/demos/` were never committed — every one of those
+ * imports failed to resolve and broke the production build. Restore the
+ * imports alongside the files if those stylesheets are ever brought in.
+ */
+
+/** Dark/Light Theme Variant **/
+@custom-variant dark (&:is(.dark *));
+@custom-variant light (&:not(.dark *));

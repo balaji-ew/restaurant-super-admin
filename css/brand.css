@@ -1,0 +1,66 @@
+/**
+ * Baked Bouquet admin tokens.
+ *
+ * The ReUI semantic tokens in `config.reui.css` (--color-background,
+ * --color-muted, …) stay exactly as they are so the vendored component kit
+ * keeps working untouched. Everything below is additive and admin-only.
+ *
+ * The plum values are the same ones the storefront uses (`css/brand.css`
+ * there), deliberately: the two surfaces are one brand, and a near-miss
+ * between them would be worse than an exact match.
+ */
+
+@theme {
+  /** Plum — the brand's dark ground. Sidebar active state, primary buttons. */
+  --color-plum-900: #3b1245;
+  --color-plum-800: #59196d;
+  --color-plum-700: #6f2e80;
+
+  /** Accents. Violet carries links, breadcrumb tails and coupon codes. */
+  --color-violet-accent: #a13fe7;
+  --color-lilac: #dcb6e3;
+
+  /** The pale purple wash behind chips, filter pills and icon buttons. */
+  --color-plum-tint: #f6eefb;
+  --color-plum-tint-strong: #eddcf7;
+
+  /** Admin chrome. */
+  --color-shell: #f4f4f6;
+  --color-table-head: #f7f7f9;
+
+  /** Neutral ink. */
+  --color-ink: #242424;
+  --color-ink-muted: #5c5c5c;
+  --color-ink-subtle: #8b8b93;
+
+  /**
+   * Type. Poppins across the whole console — it is the face the approved
+   * admin screens are drawn in. Bound to a next/font loader in
+   * `app/layout.tsx`, published as `--face-poppins`; the separate namespace
+   * matters because Tailwind turns every `--font-*` token into a utility, so
+   * a loader variable sharing one of these names would resolve to itself.
+   */
+  --font-sans: var(--face-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: var(--face-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+/** Coupon card headers and any other plum panel that needs depth. */
+@utility bg-plum-gradient {
+  background-image: linear-gradient(
+    119.59deg,
+    var(--color-plum-700) 0%,
+    var(--color-plum-900) 100.75%
+  );
+}
+
+/**
+ * Hides a scrollbar without disabling the scroll. Used by the sidebar and by
+ * the horizontally scrolling filter rails.
+ */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
