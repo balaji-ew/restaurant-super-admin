@@ -30,7 +30,7 @@ export default function ProtectedLayout({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (status === 'unauthenticated') {
-      router.replace(`/signin?next=${encodeURIComponent(pathname)}`);
+     // router.replace(`/signin?next=${encodeURIComponent(pathname)}`);
     }
   }, [status, router, pathname]);
 
@@ -48,7 +48,7 @@ export default function ProtectedLayout({ children }: { children: ReactNode }) {
     setMobileNavOpen(false);
   }, [pathname]);
 
-  if (status === 'loading' || status === 'unauthenticated') {
+  if (status === 'loading') {
     return <ScreenLoader />;
   }
 

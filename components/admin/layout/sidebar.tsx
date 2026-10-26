@@ -34,7 +34,7 @@ export function Sidebar({ className }: { className?: string }) {
       )}
     >
       <div className="flex h-(--header-height) shrink-0 items-center px-6">
-        <Link href="/dashboard" aria-label="Admin Portal Dashboard" className="flex items-center gap-3">
+        <Link href="/business-management" aria-label="Business Management" className="flex items-center gap-3">
           <div className="flex size-9 items-center justify-center rounded-xl bg-plum-900 text-white">
             <Shield className="size-5" />
           </div>

@@ -43,7 +43,7 @@ function SignInForm() {
     }
 
     const next = searchParams.get('next');
-    router.replace(next?.startsWith('/') ? next : '/dashboard');
+    router.replace(next?.startsWith('/') ? next : '/business-management');
   }
 
   return (

@@ -24,7 +24,7 @@ export default function SettingsPage() {
     <PageShell>
       <PageHeader
         title="Settings"
-        crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Settings' }]}
+        crumbs={[{ label: 'Business Management', href: '/business-management' }, { label: 'Settings' }]}
         actions={
           <ActionButton
             icon={<Save className="size-4" />}

@@ -115,7 +115,7 @@ export default function ProfilePage() {
     <FormShell>
       <FormHeader
         title="My profile"
-        onBack={() => router.push('/dashboard')}
+        onBack={() => router.push('/business-management')}
         actions={
           <ActionButton
             icon={<Save className="size-4" />}
